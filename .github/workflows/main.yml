@@ -21,7 +21,7 @@ jobs:
         uses: "roberts-sandbox/hello-action@v1"
         id: hello
         with:
-          who: 'thebender'
+          who: 'therealbender'
 
       # Runs a set of commands using the runners shell
       - name: hello output
