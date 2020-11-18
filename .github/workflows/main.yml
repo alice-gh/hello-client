@@ -29,7 +29,7 @@ jobs:
 
       - name: use hello action 2
         uses: "roberts-sandbox/hello-action@v1"
-        id: hello
+        id: hello2
         with:
           who: "wss-client-$env.my_version-all.jar"
 
