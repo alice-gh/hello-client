@@ -27,6 +27,12 @@ jobs:
         with:
           who: "wss-client-${{ env.my_version }}-all.jar"
 
+      - name: use hello action 2
+        uses: "roberts-sandbox/hello-action@v1"
+        id: hello
+        with:
+          who: "wss-client-$env.my_version-all.jar"
+
       # Runs a set of commands using the runners shell
       - name: hello output
         run: |
