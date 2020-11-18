@@ -26,7 +26,7 @@ jobs:
         id: jar
 
       - name: use name var
-        run: echo "jar-name: ${{ steps.jar.output.jar-name }}"
+        run: echo "jar-name ${{ steps.jar.output.jar-name }}"
       - name: use hello action
         uses: "roberts-sandbox/hello-action@v1"
         id: hello
