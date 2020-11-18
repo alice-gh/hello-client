@@ -25,6 +25,8 @@ jobs:
           echo set-output name=jar-name::wss-client-${{ env.my_version }}-all.jar
         id: jar
 
+      - name: use name var
+        run: echo "jar-name: ${{ steps.jar.output.jar-name }}"
       - name: use hello action
         uses: "roberts-sandbox/hello-action@v1"
         id: hello
