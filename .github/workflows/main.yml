@@ -17,11 +17,18 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: set name var 1
+        run: echo "my_version=LATEST" >> $GITHUB_ENV
+        id: jar-name
+      - name: set name var 2
+        run: echo "set-output name=jar-name::wss-client-$my_version-all.jar
+        id: jar
+
       - name: use hello action
         uses: "roberts-sandbox/hello-action@v1"
         id: hello
         with:
-          who: 'therealbender'
+          who: ${{ steps.jar.outputs.jar-name }}
 
       # Runs a set of commands using the runners shell
       - name: hello output
