@@ -23,10 +23,13 @@ jobs:
         run: |
           echo "my_version: $my_version"
           echo ::set-output name=jar-name::wss-client-${{ env.my_version }}-all.jar
+          echo "my_version_2=wss-client-${{ env.my_version }}-all.jar" >> $GITHUB_ENV
         id: jar
 
       - name: use name var
-        run: echo "jar-name ${{ steps.jar.output.jar-name }}"
+        run: |
+          echo "jar-name ${{ steps.jar.output.jar-name }}"
+          echo "my_version_2: $my_version_2"
       - name: use hello action
         uses: "roberts-sandbox/hello-action@v1"
         id: hello
