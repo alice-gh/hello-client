@@ -19,9 +19,8 @@ jobs:
     steps:
       - name: set name var 1
         run: echo "my_version=LATEST" >> $GITHUB_ENV
-        id: jar-name
       - name: set name var 2
-        run: echo "set-output name=jar-name::wss-client-$my_version-all.jar
+        run: echo set-output name=jar-name::wss-client-$my_version-all.jar
         id: jar
 
       - name: use hello action
